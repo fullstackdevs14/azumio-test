@@ -1,24 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+
+import ButtonGrid from "./components/ButtonGrid";
+import SlideFooter from "./components/SlideFooter";
+
+import "./App.scss";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
+    <div className="app">
+      <header className="app-header">
+        <h3 className="title">What are your main areas of focus?</h3>
+        <p className="subtitle">
+          This will help us build a personalized experience for you
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
+      <main>
+        <ButtonGrid
+          buttons={[
+            "Blood Glucose",
+            "Medication",
+            "Food Tracking",
+            "Exercise",
+            "Weight Management",
+            "Blood Pressure",
+            "A1C"
+          ]}
+        />
+      </main>
+      <footer>
+        <SlideFooter count={5} />
+      </footer>
     </div>
   );
 }
